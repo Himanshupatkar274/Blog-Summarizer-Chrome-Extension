@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Summarize Blog",
+    "version": "1.0",
+    "description": "A simple Chrome extension that summarizes blogs for a quicker reading experience.",
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "./background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "./icon16.png"
+      }
+    },
+    "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["./content.js"]
+        }
+      ],
+    "icons": {
+      "16": "./icon16.png"
+    },
+    "author": "Himanshu Patkar FrontEnd Developer",
+    "short_name": "Summarize Blog"
+  }
+  
